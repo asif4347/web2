@@ -1,0 +1,140 @@
+﻿@model WebProgrammingPhase2.Models.HRPersonnel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Publish A Job</h2>
+
+
+
+
+
+    <div>
+        <nav class="navbar-aside navbar-static-side " id="menu">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="sidebar-collapse">
+
+                        <ul class="nav" id="side-menu" style="background-color:#2E3338">
+
+                            <li class="active">
+                                <a href="/HRPersonnels/Create"><i class="fa fa-th-large"></i> <span class="nav-label">Advertise Job </span><span class="fa arrow"></span><span class="label label-rouded pull-right p1-bg note-icon">6</span></a>
+
+                            </li>
+                            <li class="active">
+                                <a href="/HRPersonnels/"><i class="fa fa-th-large"></i> <span class="nav-label">View Advertised Jobs </span><span class="fa arrow"></span><span class="label label-rouded pull-right p1-bg note-icon">6</span></a>
+
+                            </li>
+
+                            <li>
+                                <a href="/Applicants"><i class="fa fa-cog"></i> <span class="nav-label">Job Applications </span><span class="label label-rouded pull-right p3-bg note-icon">New 40+</span></a>
+
+                            </li>
+                            <li>
+                                <a href="#"><i class="fa fa-envelope"></i> <span class="nav-label">Email </span><span class="fa arrow"></span></a>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <span class="text-center">
+
+                                <span class="col-lg-offset-4"><b>HR Personnel Admin</b></span>
+                                @*<span class="col-lg-offset-4"><a href="\Home" style="color:black">Logout</a></span>*@
+                            </span>
+                        </div>
+                        <div class="panel-body">
+
+
+
+                           @using (Html.BeginForm())
+                           {
+                            @Html.AntiForgeryToken()
+
+                            <div class="form-horizontal">
+                                <h4>Enter Job Credetials</h4>
+                                <hr />
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.JobTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.JobTitle, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.JobTitle, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.shortDes, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.shortDes, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.shortDes, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Department, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.Department, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Department, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.Position, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.Position, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Position, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.RequiredSkills, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.EditorFor(model => model.RequiredSkills, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.RequiredSkills, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.ApplyTill, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @*@Html.EditorFor(model => model.ApplyTill, new { htmlAttributes = new { @class = "form-control" } })*@
+                                        <input type="date" name="ApplyTill" />
+                                        @Html.ValidationMessageFor(model => model.ApplyTill, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.LongDes, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-10">
+                                        @Html.TextAreaFor(model => model.LongDes, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.LongDes, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type="submit" value="Create" class="btn btn-default" />
+                                    </div>
+                                </div>
+                            </div>
+                           }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -1,0 +1,33 @@
+﻿ .panel-body input[type="email"], input[type="text"], input[type="password"],input[type="date"],input[type="file"],select {
+        
+	border-radius: 30px;
+	border-bottom-color:#428BCA;
+	height: 40px;
+	font-size: 16px;
+	padding: 0 30px;
+	margin-bottom: 15px;
+	color: black;
+    font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+.iType {
+border-radius: 30px;
+	border-bottom-color:#428BCA;
+	height: 40px;
+	font-size: 16px;
+	padding: 0 30px;
+	margin-bottom: 15px;
+	color: black;
+    font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+
+}
+textarea{
+
+    border-radius: 30px;
+	border-bottom-color:#428BCA;
+	height: 120px;
+	font-size: 16px;
+	padding: 0 30px;
+	margin-bottom: 15px;
+	color: black;
+     font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}

@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "RoleSelect";
+}
+
+<h2>Role Select</h2>
+<select id="role">
+    <option value="null">Select Role</option>
+    <option value="HRPersonal">HR Personal</option>
+    <option value="HRManager">HR Manager</option>
+    <option value="SME">SME</option>
+    <option value="Applicant">Applicant</option>
+
+</select>
+<p id="msg" style="color:red"></p>
+<br />
+<button onclick="checkRole()" class="btn btn-info">Continue>></button>
+
+<script>
+
+    function checkRole() {
+        var role = document.getElementById("role").value;
+        if (role == "Applicant") {
+            location.href = "/Applicants";
+
+        }
+        if (role == "HRPersonal") {
+            location.href = "/HRPersonnels";
+        }
+        if (role == "SME") {
+
+            location.href = "/SME";
+        }
+        if (role == "HRManager") {
+            location.href = "/Manage";
+        }
+        else {
+            document.getElementById("msg").innerHTML = "Please Select A role";
+        }
+
+    }
+</script>
+

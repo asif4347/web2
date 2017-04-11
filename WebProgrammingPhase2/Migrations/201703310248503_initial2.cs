@@ -1,0 +1,18 @@
+namespace WebProgrammingPhase2.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class initial2 : DbMigration
+    {
+        public override void Up()
+        {
+            AddColumn("dbo.Applicants", "Email", c => c.String(nullable: false));
+        }
+        
+        public override void Down()
+        {
+            DropColumn("dbo.Applicants", "Email");
+        }
+    }
+}

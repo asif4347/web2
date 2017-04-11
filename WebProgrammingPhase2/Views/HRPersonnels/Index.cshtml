@@ -1,0 +1,129 @@
+﻿@model IEnumerable<WebProgrammingPhase2.Models.HRPersonnel>
+
+@{
+    ViewBag.Title = "Jobs Published";
+}
+
+<h2>Jobs Published</h2>
+
+<p>
+    @Html.ActionLink("Publish New Job", "Create",new { @class="btn btn-success"})
+</p>
+
+
+
+
+
+<div>
+    <nav class="navbar-aside navbar-static-side " id="menu">
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="sidebar-collapse">
+
+                    <ul class="nav" id="side-menu" style="background-color:#2E3338">
+
+                        <li class="active">
+                            <a href="/HRPersonnels/Create"><i class="fa fa-th-large"></i> <span class="nav-label">Advertise Job </span><span class="fa arrow"></span><span class="label label-rouded pull-right p1-bg note-icon">6</span></a>
+
+                        </li>
+                        <li class="active">
+                            <a href="/HRPersonnels/"><i class="fa fa-th-large"></i> <span class="nav-label">View Advertised Jobs </span><span class="fa arrow"></span><span class="label label-rouded pull-right p1-bg note-icon">6</span></a>
+
+                        </li>
+
+                        <li>
+                            <a href="/Applicants"><i class="fa fa-cog"></i> <span class="nav-label">Job Applications </span><span class="label label-rouded pull-right p3-bg note-icon">New 40+</span></a>
+
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-envelope"></i> <span class="nav-label">Email </span><span class="fa arrow"></span></a>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <span class="text-center">
+
+                            <span class="col-lg-offset-4"><b>HR Personnel Admin</b></span>
+                            @*<span class="col-lg-offset-4"><a href="\Home" style="color:black">Logout</a></span>*@
+                        </span>
+                    </div>
+                    <div class="panel-body">
+                        <h4>Advertised Jobs</h4>
+
+                        <!--Body here-->
+
+                        <table class="table table-bordered table-hover table-responsive">
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.JobTitle)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.shortDes)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Department)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Position)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.RequiredSkills)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ApplyTill)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LongDes)
+                                </th>
+                                <th></th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.JobTitle)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.shortDes)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Department)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Position)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RequiredSkills)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ApplyTill)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LongDes)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                                        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                                    </td>
+                                </tr>
+                            }
+
+                        </table>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
